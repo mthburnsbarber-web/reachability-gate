@@ -1,0 +1,58 @@
+{
+  "name": "sample-notes",
+  "displayName": "Sample Notes",
+  "description": "Quick notes next to your code.",
+  "publisher": "example",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sampleNotes.newNote",
+        "title": "New Note",
+        "category": "Sample Notes"
+      },
+      {
+        "command": "sampleNotes.archiveAll",
+        "title": "Archive All Notes",
+        "category": "Sample Notes"
+      },
+      {
+        "command": "sampleNotes.exportNotes",
+        "title": "Export Notes",
+        "category": "Sample Notes"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sampleNotes.archiveAll",
+          "when": "false"
+        }
+      ],
+      "editor/title": [
+        {
+          "command": "sampleNotes.pinNote",
+          "group": "navigation"
+        }
+      ]
+    },
+    "keybindings": [
+      {
+        "command": "sampleNotes.quickCapture",
+        "key": "ctrl+alt+n",
+        "mac": "cmd+alt+n"
+      }
+    ]
+  },
+  "scripts": {
+    "compile": "tsc -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "typescript": "^5.4.0"
+  }
+}

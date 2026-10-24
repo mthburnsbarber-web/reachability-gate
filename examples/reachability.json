@@ -1,0 +1,17 @@
+{
+  "$comment": "Rules for an app that registers handlers with actions.register(\"id\", fn) and dispatches { type: \"id\" }. Keys that start with $ are ignored. Every other key is optional and replaces the preset's value; a \"...\" entry in a list keeps the preset's entries.",
+  "preset": "action-bus",
+  "extensions": ["...", ".jsx"],
+  "idPattern": "[\\w./-]+",
+  "register": ["actions.register("],
+  "dispatch": ["type:"],
+  "surfacePaths": ["src/ui/**"],
+  "internalPaths": ["test/**", "**/*.test.*"],
+  "surfaceContext": ["...", "onClick="],
+  "allow": [
+    {
+      "id": "cart/expireStale",
+      "reason": "Runs from the hourly timer in src/timers.js. No person triggers it."
+    }
+  ]
+}

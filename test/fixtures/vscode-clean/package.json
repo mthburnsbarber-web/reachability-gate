@@ -1,0 +1,54 @@
+{
+  "name": "sample-notes-view",
+  "displayName": "Sample Notes View",
+  "description": "A notes view with a panel and a status bar item.",
+  "publisher": "example",
+  "version": "0.1.0",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "sampleNotes.openPanel",
+        "title": "Open Notes Panel",
+        "category": "Sample Notes"
+      },
+      {
+        "command": "sampleNotes.refresh",
+        "title": "Refresh",
+        "icon": "$(refresh)"
+      }
+    ],
+    "menus": {
+      "commandPalette": [
+        {
+          "command": "sampleNotes.refresh",
+          "when": "false"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "sampleNotes.refresh",
+          "when": "view == sampleNotes.list",
+          "group": "navigation"
+        }
+      ]
+    },
+    "views": {
+      "explorer": [
+        {
+          "id": "sampleNotes.list",
+          "name": "Notes"
+        }
+      ]
+    },
+    "viewsWelcome": [
+      {
+        "view": "sampleNotes.list",
+        "contents": "No notes yet.\n[Create a Note](command:sampleNotes.createFirst)"
+      }
+    ]
+  }
+}

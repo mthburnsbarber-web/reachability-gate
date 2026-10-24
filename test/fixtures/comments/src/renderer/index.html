@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Notes</title>
+  </head>
+  <body>
+    <!-- <button onclick="bus.dispatch({ kind: 'export.run' })">Export</button> -->
+    <button id="help">Help</button>
+    <script>
+      // document.querySelector("#export").onclick = () => bus.dispatch({ kind: "export.run" });
+      document.querySelector("#help").onclick = () => bus.dispatch({ kind: "help.open" });
+    </script>
+  </body>
+</html>

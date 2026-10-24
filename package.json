@@ -1,0 +1,33 @@
+{
+  "name": "reachability-gate",
+  "version": "1.0.0",
+  "description": "Fails the build when an action is registered in code but nothing a person can use reaches it.",
+  "license": "MIT",
+  "type": "module",
+  "bin": {
+    "reachability-gate": "./reachability-gate.mjs"
+  },
+  "exports": "./reachability-gate.mjs",
+  "files": [
+    "reachability-gate.mjs",
+    "examples/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mthburnsbarber-web/reachability-gate.git"
+  },
+  "keywords": [
+    "reachability",
+    "dead-code",
+    "vscode-extension",
+    "electron",
+    "ci",
+    "gate"
+  ]
+}

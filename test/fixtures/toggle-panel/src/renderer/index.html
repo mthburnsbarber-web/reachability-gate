@@ -1,0 +1,15 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Notes</title>
+  </head>
+  <body>
+    <button id="new-note">New note</button>
+    <script>
+      document.querySelector("#new-note").addEventListener("click", () => {
+        window.bus.dispatch({ kind: "notes.open", id: null });
+      });
+    </script>
+  </body>
+</html>
